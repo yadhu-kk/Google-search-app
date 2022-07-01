@@ -1,22 +1,18 @@
 <div id="header">
   <div id="topbar">
     <img id="searchbarimage" src="assets/images/google.png" />
-    <div id="searchbar" type="text">
-      <input id="searchbartext" type="text" value="Angular" />
+    <div id="searchbar" type="text" (submit)="onSubmit()">
+      <input
+        id="searchbartext"
+        type="text"
+        placeholder="angular"
+        [(ngModel)]="searchItem"
+      />
       <button id="searchbarmic">
-        <img src="assets/images/mic.png" />
+        <img src="assets/images/mic.svg" />
       </button>
       <button id="searchbarbutton">
-        <svg
-          class="svg-icon search-icon"
-          aria-labelledby="t//www.w3.org/2000/svg"
-          viewBox="0 0 19.9 19.7"
-        >
-          <g class="search-path" fill="none" stroke="#848F91">
-            <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
-            <circle cx="8" cy="8" r="7" />
-          </g>
-        </svg>
+        <img src="assets/images/sb.svg" />
       </button>
     </div>
 
@@ -37,12 +33,11 @@
     </ul>
   </div>
 </div>
-<div id="searchresult">
-  <a>Angularhttps://angular.io</a>
-  <h1>Angular</h1>
+<div id="searchresult" *ngFor="let item of Resultmodel">
+  <a>{{ item.url }}</a>
+  <h1>{{ item.title }}</h1>
   <p>
-    is a platform for building mobile and desktop web applications. Join the
-    community of millions of developers who build compelling user interfaces ...
+    {{ item.description }}
   </p>
   <p>hello</p>
 </div>

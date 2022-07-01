@@ -15,7 +15,7 @@
 
 #searchbarmic {
   height: 45px;
-  width: 35px;
+  width: 80px;
   margin-left: auto;
   background-color: white;
 }
@@ -25,8 +25,8 @@
 }
 
 #searchbarbutton svg {
-  height: 25px;
-  width: 35px;
+  height: 20px;
+  width: 25px;
   position: relative;
 }
 
@@ -62,6 +62,11 @@
 }
 
 #searchbar button {
+  height: 45px;
+  width: 40px;
+  position: relative;
+  margin-right: -2px;
+  background-color: white;
   border: none;
   cursor: pointer;
 }
