@@ -1,26 +1,33 @@
-<div id="header">
-  <div id="topbar">
-    <img id="searchbarimage" src="assets/images/google.png" />
-    <div id="searchbar" type="text" (submit)="onSubmit()">
+<div class="header">
+  <div class="topbar">
+    <img class="searchbarimage" src="assets/images/google.png" />
+    <div class="searchbar" type="text">
       <input
-        id="searchbartext"
+        class="searchbartext"
         type="text"
         placeholder="angular"
-        [(ngModel)]="searchItem"
+        [(ngModel)]="searchQuery"
       />
-      <button id="searchbarmic">
+      <button class="searchbarmic">
         <img src="assets/images/mic.svg" />
       </button>
-      <button id="searchbarbutton">
+      <button class="searchbarbutton" (click)="onClick()">
         <img src="assets/images/sb.svg" />
       </button>
     </div>
-
-    <img id="profileimage" src="assets/images/unimage.jpg" />
+    <ul class="settingsicon">
+      <li><img src="assets/images/settings.png" /></li>
+    </ul>
+    <ul class="allicon">
+      <li><img src="assets/images/alapp.png" /></li>
+    </ul>
+    <ul class="unimage">
+      <li><img src="assets/images/unimage.jpg" /></li>
+    </ul>
   </div>
-  <div id="optionsbar">
-    <ul id="optionsmenu1">
-      <li id="optionsmenunew">All</li>
+  <div class="optionsbar">
+    <ul class="optionsmenu1">
+      <li class="optionsmenunew"><img src="assets/images/sb.svg" />All</li>
       <li>News</li>
       <li>Videos</li>
       <li>Images</li>
@@ -28,16 +35,19 @@
       <li>More</li>
     </ul>
 
-    <ul id="optionsmenu2">
+    <ul class="optionsmenu2">
       <li>Tools</li>
     </ul>
   </div>
 </div>
-<div id="searchresult" *ngFor="let item of Resultmodel">
-  <a>{{ item.url }}</a>
+
+<div class="searchresult" *ngFor="let item of results">
+  <p class="results-top">About 34,00,00,000 results (0.37 seconds)</p>
   <h1>{{ item.title }}</h1>
+  <a href="">{{ item.url }}</a>
+  <a>{{ item.date }}</a>
+
   <p>
     {{ item.description }}
   </p>
-  <p>hello</p>
 </div>

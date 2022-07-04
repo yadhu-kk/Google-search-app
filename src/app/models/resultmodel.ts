@@ -1,4 +1,4 @@
-export interface Resultmodel {
+export interface searchResult {
   url: string;
   title: string;
   description: string;

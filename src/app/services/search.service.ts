@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Resultmodel } from '../models/resultmodel';
-
-const mockResults: Resultmodel[] = [
+import { searchResult } from '../models/resultmodel';
+const mockResults: searchResult[] = [
   {
     url: 'https://angular.io/',
     title: 'angular',
@@ -25,9 +24,9 @@ const mockResults: Resultmodel[] = [
 })
 export class SearchService {
   constructor() {}
-  search(query: string): Resultmodel[] {
+  search(query: string): searchResult[] {
     return mockResults.filter((item) => {
-      return item.title.includes(query);
+      return item.title.toLowerCase().includes(query.toLowerCase());
     });
   }
 }
