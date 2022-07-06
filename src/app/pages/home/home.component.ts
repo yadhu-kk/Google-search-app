@@ -9,10 +9,25 @@ import { searchResult } from 'src/app/models/resultmodel';
 export class HomeComponent implements OnInit {
   searchQuery = '';
   results: searchResult[] = [];
-
+  appIcons = [
+    { backgroundPosition: '0px -1104px', label: 'Gmail' },
+    { backgroundPosition: '0px -2001px', label: 'Drive' },
+    { backgroundPosition: '0px -69px', label: 'Docs' },
+    { backgroundPosition: '0px -966px', label: 'Sheets' },
+    { backgroundPosition: '0px -276px', label: 'Slides' },
+    { backgroundPosition: '0px -621px', label: 'Calendar' },
+    { backgroundPosition: '0px -138px', label: 'Chat' },
+    { backgroundPosition: '0px -2691px', label: 'Meet' },
+    { backgroundPosition: '0px -2415px', label: 'Forms' },
+    { backgroundPosition: '0px -1242px', label: 'Currents' },
+    { backgroundPosition: '0px -1380px', label: 'Sites' },
+    { backgroundPosition: '0px -1587px', label: 'Contacts' },
+  ];
   constructor(private SearchService: SearchService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('appIcons', this.appIcons);
+  }
   onClick() {
     this.results = this.SearchService.search(this.searchQuery);
   }

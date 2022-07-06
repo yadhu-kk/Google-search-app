@@ -5,7 +5,7 @@
       <input
         class="searchbartext"
         type="text"
-        placeholder="angular"
+        placeholder="Search here"
         [(ngModel)]="searchQuery"
       />
       <button class="searchbarmic">
@@ -15,15 +15,26 @@
         <img src="assets/images/sb.svg" />
       </button>
     </div>
-    <ul class="settingsicon">
-      <li><img src="assets/images/settings.png" /></li>
-    </ul>
-    <ul class="allicon">
-      <li><img src="assets/images/alapp.png" /></li>
-    </ul>
-    <ul class="unimage">
-      <li><img src="assets/images/unimage.jpg" /></li>
-    </ul>
+    <div class="asd">
+      <div><img src="assets/images/settings.png" /></div>
+
+      <div>
+        <img src="assets/images/alapp.png" />
+        <div class="icons">
+          <ul>
+            <li *ngFor="let icon of appIcons">
+              <span
+                class="appIcon"
+                [style]="{ backgroundPosition: icon.backgroundPosition }"
+              ></span>
+              <span>{{ icon.label }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="unimage"><img src="assets/images/unnamed.png" /></div>
+    </div>
   </div>
   <div class="optionsbar">
     <ul class="optionsmenu1">
