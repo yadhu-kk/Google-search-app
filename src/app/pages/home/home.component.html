@@ -19,8 +19,8 @@
       <div><img src="assets/images/settings.png" /></div>
 
       <div>
-        <img src="assets/images/alapp.png" />
-        <div class="icons">
+        <img src="assets/images/alapp.png" (click)="toggleTag()" />
+        <div class="icons" *ngIf="!showMe">
           <ul>
             <li *ngFor="let icon of appIcons">
               <span

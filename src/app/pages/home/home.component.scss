@@ -209,6 +209,7 @@
   flex-wrap: nowrap;
   flex-direction: row;
   margin-left: 400px;
+  cursor: pointer;
   img {
     width: 25px;
     height: 25px;
@@ -219,17 +220,20 @@
 }
 .icons {
   position: absolute;
-  right: 10px;
-  width: 300px;
+  right: 30px;
+  width: 320px;
   height: 450px;
+  margin-top: 20px;
   box-shadow: 0 0 5px black;
-  border-radius: 50px;
+  border-radius: 10px;
+  background-color: #1a0dab;
 
   ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    width: 100%;
+
+    background-color: white;
     li {
       width: 85px;
       height: 85px;
@@ -240,5 +244,6 @@
     width: 60px;
     height: 60px;
     display: inline-block;
+    background-color: white;
   }
 }

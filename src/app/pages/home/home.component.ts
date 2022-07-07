@@ -7,6 +7,7 @@ import { searchResult } from 'src/app/models/resultmodel';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  showMe: boolean = true;
   searchQuery = '';
   results: searchResult[] = [];
   appIcons = [
@@ -25,10 +26,11 @@ export class HomeComponent implements OnInit {
   ];
   constructor(private SearchService: SearchService) {}
 
-  ngOnInit(): void {
-    console.log('appIcons', this.appIcons);
-  }
+  ngOnInit(): void {}
   onClick() {
     this.results = this.SearchService.search(this.searchQuery);
+  }
+  toggleTag() {
+    this.showMe = !this.showMe;
   }
 }
